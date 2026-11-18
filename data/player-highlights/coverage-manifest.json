@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-18",
+  "status": "seed_audit_incomplete",
+  "scope": "Every current NBA and NFL player, not only featured players or betting markets",
+  "owner_lane": "player_highlights",
+  "website_lane": "01a1eefa-603e-79f1-8b41-70ca6196d3c2",
+  "roster_snapshot": {
+    "date": null,
+    "complete": false,
+    "nba_total": null,
+    "nfl_total": null,
+    "sources": [
+      {
+        "league": "NBA",
+        "url": "https://www.nba.com/players",
+        "observed_at": "2026-11-18",
+        "note": "Directory located; pagination not fully captured. Do not use first-page row count as completed roster snapshot."
+      },
+      {
+        "league": "NBA",
+        "url": "https://www.nba.com/warriors/roster",
+        "observed_at": "2026-11-18"
+      },
+      {
+        "league": "NFL",
+        "url": "https://www.nfl.com/players/active/all",
+        "observed_at": "2026-11-18",
+        "note": "Directory is a starting point; reconcile all team rosters and preserve active/reserve/practice-squad status rather than silently excluding players."
+      },
+      {
+        "league": "NFL",
+        "url": "https://www.chiefs.com/team/players-roster/",
+        "observed_at": "2026-11-18"
+      }
+    ],
+    "prior_owner_counts": {
+      "Warriors": {
+        "matched": 1,
+        "total": 18
+      },
+      "Chiefs": {
+        "matched": 1,
+        "total": 53
+      },
+      "note": "Parent reports existing owner snapshot; snapshot date unavailable; these are two team counts, never league totals."
+    }
+  },
+  "playback_policy": {
+    "autoplay": false,
+    "start_on_user_gesture": true,
+    "unexpected_audio": false,
+    "older_season_fallback_allowed": true,
+    "youtube_stats_overlay": false
+  },
+  "verification_contract": {
+    "statuses": [
+      "unsearched",
+      "candidate",
+      "metadata_verified",
+      "owner_reported_playback_verified",
+      "playback_verified",
+      "embed_blocked",
+      "unavailable"
+    ],
+    "requirements": [
+      "Match league plus stable roster player ID before publishing; names alone cannot disambiguate.",
+      "Record actual uploader channel ID and official status from source, not title alone.",
+      "Record source season separately from current roster team; transfers do not change historical footage.",
+      "Verify actual player-page embed after tap on desktop and phone; search availability/oEmbed metadata alone is not playback proof.",
+      "Record environment, verified timestamp, result and error codes; preserve rejected candidates so they are not retried blindly.",
+      "No invented highlight URLs, wrong-player substitution, or claimed full coverage without complete roster snapshot."
+    ]
+  },
+  "players": [
+    {
+      "player_key": "nba:stephen-curry",
+      "official_player_id": null,
+      "name": "Stephen Curry",
+      "league": "NBA",
+      "team": "Golden State Warriors",
+      "roster_identity_status": "pending_snapshot",
+      "video_id": "w8QD7PPvnUw",
+      "url": "https://www.youtube.com/watch?v=w8QD7PPvnUw",
+      "channel": {
+        "name": "Golden State Warriors",
+        "id": null,
+        "verification": "owner_reported"
+      },
+      "season": null,
+      "status": "owner_reported_playback_verified",
+      "verification": {
+        "source": "Existing Bet owner via parent handoff",
+        "reported_at": "2026-11-18",
+        "actual_playback_checked_at": null,
+        "environment": "HP local iPlay Bet preview, owner reported",
+        "own_recheck": "web fetch throttled; no independent playback"
+      },
+      "gaps": [
+        "Exact channel identity and reel season",
+        "Dated desktop/phone evidence"
+      ]
+    },
+    {
+      "player_key": "nfl:patrick-mahomes",
+      "official_player_id": null,
+      "name": "Patrick Mahomes",
+      "league": "NFL",
+      "team": "Kansas City Chiefs",
+      "roster_identity_status": "pending_snapshot",
+      "video_id": "K2kDE5TvQHs",
+      "url": "https://www.youtube.com/watch?v=K2kDE5TvQHs",
+      "channel": {
+        "name": "Kansas City Chiefs",
+        "id": null,
+        "verification": "owner_reported"
+      },
+      "season": "2019",
+      "fallback": true,
+      "status": "owner_reported_playback_verified",
+      "verification": {
+        "source": "Existing Bet owner via parent handoff",
+        "reported_at": "2026-11-18",
+        "actual_playback_checked_at": null,
+        "environment": "HP local iPlay Bet preview, owner reported",
+        "own_recheck": "web fetch failed; no independent playback"
+      },
+      "rejected_candidates": [
+        {
+          "video_id": null,
+          "season": "2025",
+          "status": "embed_blocked",
+          "evidence": "Owner reports two newer candidates failed; exact IDs needed",
+          "count": 2
+        }
+      ],
+      "gaps": [
+        "Rejected candidate IDs",
+        "Exact channel identity",
+        "Dated desktop/phone evidence"
+      ]
+    },
+    {
+      "player_key": "nfl:josh-allen-bills",
+      "official_player_id": null,
+      "name": "Josh Allen",
+      "league": "NFL",
+      "team": "Buffalo Bills",
+      "roster_identity_status": "pending_snapshot",
+      "video_id": "8xLGIufzSYE",
+      "url": "https://www.youtube.com/watch?v=8xLGIufzSYE",
+      "title": "Buffalo Bills - Josh Allen's Top Plays from 2025!",
+      "channel": {
+        "name": "Buffalo Bills",
+        "id": null,
+        "verification": "search_snippet_only"
+      },
+      "season": "2025",
+      "status": "candidate",
+      "verification": {
+        "discovered_at": "2026-11-18",
+        "actual_playback_checked_at": null,
+        "own_recheck": "direct YouTube fetch throttled"
+      },
+      "supporting_source": "https://www.nfl.com/videos/josh-allen-highlights-2025-season",
+      "gaps": [
+        "Stable roster ID",
+        "Official channel confirmation",
+        "Embed playback desktop and phone"
+      ]
+    },
+    {
+      "player_key": "nba:jayson-tatum",
+      "official_player_id": null,
+      "name": "Jayson Tatum",
+      "league": "NBA",
+      "team": "Boston Celtics",
+      "roster_identity_status": "pending_snapshot",
+      "video_id": "MfIY1HEg08Q",
+      "url": "https://www.youtube.com/watch?v=MfIY1HEg08Q",
+      "title": "Jayson Tatum STUFFED THE STAT SHEET vs Mavericks",
+      "channel": {
+        "name": null,
+        "id": null,
+        "verification": "unverified"
+      },
+      "season": null,
+      "status": "candidate",
+      "verification": {
+        "discovered_at": "2026-11-18",
+        "actual_playback_checked_at": null,
+        "own_recheck": "direct YouTube fetch throttled"
+      },
+      "supporting_source": "https://www.nba.com/watch/video/highlights-from-jayson-tatum-34-point-game",
+      "supporting_source_note": "Separate official highlight page proves another reel exists, not that this YouTube candidate has an official uploader.",
+      "gaps": [
+        "Stable roster ID",
+        "Uploader and season",
+        "Embed playback desktop and phone"
+      ]
+    }
+  ],
+  "summary": {
+    "records": 4,
+    "owner_reported_playable": 2,
+    "new_candidates": 2,
+    "independently_playback_verified": 0,
+    "full_roster_coverage": "unknown"
+  },
+  "blockers": [
+    "No executor or browser playback environment in this worker",
+    "HP implementation lane cannot be read with available connector tools",
+    "YouTube direct fetches throttled or errored",
+    "Roster full pagination and all NFL roster statuses not captured"
+  ],
+  "next_steps": [
+    "Import complete NBA and NFL roster snapshot, retain league player IDs, team and roster status; report denominator per league.",
+    "Reconcile two owner samples and failed Mahomes IDs with HP lane.",
+    "Search remaining players by identity plus highlights; prefer official league/team channels, older seasons allowed.",
+    "Queue candidates for actual desktop/phone embed checks; website consumes only verified mappings and labels older footage."
+  ]
+}
